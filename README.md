@@ -48,9 +48,6 @@ odoo/
 - **Error de conexión a la base de datos**: Asegúrate de que los parámetros en `.env` coincidan con los configurados en `odoo.conf`.
 - **Tiempo de arranque prolongado**: La primera ejecución puede tardar más debido a la descarga de imágenes. Revisa tu conexión a Internet.
 
-## Licencia
-Este proyecto está bajo la MIT License. Para más detalles, consulta el archivo `LICENSE`.
-
 ---
 
 ✨ ¡Ahora tienes todo listo para empezar con Odoo!
