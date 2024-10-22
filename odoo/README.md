@@ -8,7 +8,7 @@
 ### 1. Duplicar y renombrar archivos clave
 Asegúrate de tener los siguientes archivos en la raíz del proyecto:
 - `docker-compose.yaml`
-- `.env`
+- Cambiar de `a.env`->`.env`
 - `config/odoo.conf`
 
 ### 2. Configuración del archivo `.env`
