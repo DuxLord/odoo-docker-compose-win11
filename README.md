@@ -19,16 +19,18 @@ Asegúrate de tener los siguientes archivos en la raíz del proyecto:
 - **⚠️ Importante**: **EN UN ENTORNO DE PRODUCCION**, el valor de `ADMIN_PASSWD` debe ser seguro, ya que este controla la gestión de las bases de datos.
 
 ## La estructura te debe quedar algo asi:
+```markdown
 odoo/
 ├── docker-compose.yaml
 ├── .env
 ├── config/
-|  └── odoo.conf
-└── addons/ # esta carpeta se creará despues de la primera inicialización
-
+│   └── odoo.conf
+└── addons/ # esta carpeta se creará después de la primera inicialización
+```
 ### 4. Ejecución de Docker Compose
 1. Abre una terminal en la raíz del proyecto donde está el archivo `docker-compose.yaml`.
 2. Ejecuta el siguiente comando para levantar los servicios:
+
    ```bash
    docker-compose up -d
    ```
