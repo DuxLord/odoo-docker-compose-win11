@@ -17,7 +17,7 @@ Asegúrate de tener los siguientes archivos en la raíz del proyecto:
 ### 3. Configuración del archivo `config/odoo.conf`
 - Asegúrate de que los parámetros de base de datos, como `DB_HOST`, `DB_PASSWD` y `DB_USER`, estén alineados con los valores establecidos en el archivo `.env`.
 - **⚠️ Importante**: **EN UN ENTORNO DE PRODUCCION**, el valor de `ADMIN_PASSWD` debe ser seguro, ya que este controla la gestión de las bases de datos.
-- 
+
 ## La estructura te debe quedar algo asi:
 odoo/
 ├── docker-compose.yaml
