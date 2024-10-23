@@ -1,28 +1,30 @@
 services:
   web:
     container_name: ${WEB_HOST}
-    image: ${WEB_IMAGE_NAME}
+    image: odoo:latest  # Use the correct Odoo image
     depends_on:
       - db
     ports:
-      - "${WEB_PORT}:8069"
+      - "${WEB_PORT}:8069"  # Access Odoo at localhost:8085
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-    entrypoint: "/usr/bin/odoo -c /etc/odoo/odoo.conf --dev all"
+      - ./logs:/var/log/odoo
+    entrypoint: ["odoo", "-c", "/etc/odoo/odoo.conf", "--dev", "all"]
+
   db:
-    container_name: ${DB_HOST}
-    image: ${DB_IMAGE}
+    container_name: postgres
+    image: postgres:latest  # Ensure you're using the correct PostgreSQL image
     environment:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_PASSWORD=${DB_PASSWD}
       - POSTGRES_USER=${DB_USER}
-      - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
-      - "${DB_PORT}:5432"
+      - "${DB_PORT}:5432"  # Ensure this port matches odoo.conf
     volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
+      - odoo-db-data:/var/lib/postgresql/data  # Use the named volume
+
 volumes:
   odoo-db-data:
   odoo-web-data:
